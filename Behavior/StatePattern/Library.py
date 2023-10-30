@@ -1,7 +1,9 @@
 from dataclasses import dataclass
+from abc import ABC, abstractmethod
 
 
-class BookState:
+class BookState(ABC):
+    @abstractmethod
     def handle(self, book):
         pass
 

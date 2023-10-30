@@ -1,4 +1,10 @@
-class State:
+from abc import ABC, abstractmethod
+from dataclasses import dataclass
+
+
+@dataclass
+class State(ABC):
+    @abstractmethod
     def handle(self, context):
         pass
 
@@ -15,9 +21,9 @@ class StateB(State):
         context.state = StateA()
 
 
+@dataclass
 class Context:
-    def __init__(self, state: State):
-        self.state = state
+    state: State
 
     def request(self):
         self.state.handle(self)
