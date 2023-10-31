@@ -29,6 +29,7 @@ class Context:
         self.state.handle(self)
 
 
-context = Context(StateA())
-context.request()  # Outputs: Handling in State A
-context.request()  # Outputs: Handling in State B
+if __name__ == "__main__":
+    context = Context(StateA())
+    context.request()  # Outputs: Handling in State A
+    context.request()  # Outputs: Handling in State B
