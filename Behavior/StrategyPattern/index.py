@@ -26,11 +26,12 @@ class Context:
         return self.strategy.execute(a, b)
 
 
-add_strategy = AddStrategy()
-subtract_strategy = SubtractStrategy()
+if __name__ == "__main__":
+    add_strategy = AddStrategy()
+    subtract_strategy = SubtractStrategy()
 
-context = Context(add_strategy)
-print(context.execute_strategy(5, 3))  # Outputs: 8
+    context = Context(add_strategy)
+    print(context.execute_strategy(5, 3))  # Outputs: 8
 
-context.strategy = subtract_strategy
-print(context.execute_strategy(5, 3))  # Outputs: 2
+    context.strategy = subtract_strategy
+    print(context.execute_strategy(5, 3))  # Outputs: 2

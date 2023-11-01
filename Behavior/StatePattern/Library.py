@@ -28,6 +28,7 @@ class Book:
         self.state.handle(self)
 
 
-book = Book(AvailableState())
-book.change_state()  # Outputs: The book is now checked out.
-book.change_state()  # Outputs: The book is now returned.
+if __name__ == "__main__":
+    book = Book(AvailableState())
+    book.change_state()  # Outputs: The book is now checked out.
+    book.change_state()  # Outputs: The book is now returned.
